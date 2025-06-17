@@ -145,11 +145,7 @@
     <h1>Welcome to TrueCraft Nashville</h1>
     <p>Transform your space with Nashville's most trusted remodeling experts.</p>
     <div style="margin-top: 40px; display: flex; justify-content: center;">
-      <iframe title="Modern Kitchen Counter" frameborder="0" width="640" height="480"
-        src="https://sketchfab.com/models/d245b006ce1d4e2191daf2df0d6c0e30/embed"
-        allow="autoplay; fullscreen; vr"
-        mozallowfullscreen="true" webkitallowfullscreen="true">
-      </iframe>
+      <iframe title="Modern Kitchen Counter" frameborder="0" width="640" height="480" src="https://sketchfab.com/models/d245b006ce1d4e2191daf2df0d6c0e30/embed" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     </div>
   </section>
 
@@ -173,7 +169,7 @@
     <form id="uploadForm">
       <input type="text" id="name" placeholder="Your Name" required>
       <input type="email" id="email" placeholder="Your Email" required>
-      <input type="file" id="file" name="file" multiple required>
+      <input type="file" id="file" accept=".jpg,.png,.pdf,.zip" required>
       <button type="submit">Send Design</button>
     </form>
     <p id="uploadStatus" style="margin-top: 10px; color: lightgreen;"></p>
@@ -199,9 +195,7 @@
     <p style="margin-top: 20px;">TrueCraft Nashville<br>123 Artisan Way, Nashville, TN<br>Mon–Fri 9AM–5PM</p>
   </section>
 
-  <footer>
-    &copy; 2025 TrueCraft Nashville. All rights reserved.
-  </footer>
+  <footer>&copy; 2025 TrueCraft Nashville. All rights reserved.</footer>
 
   <script async src="//www.instagram.com/embed.js"></script>
   <script>
@@ -230,7 +224,7 @@
       }
 
       try {
-        const response = await fetch('https://truecraft-server.onrender.com/upload', {
+        const response = await fetch('https://www.test123hatham.com/upload', {
           method: 'POST',
           body: formData
         });
