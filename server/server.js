@@ -12,7 +12,7 @@ const port = 3000;
 
 // Enable CORS
 app.use(cors({
-  origin: 'https://www.test123hatham.com'
+  origin: ['https://www.test123hatham.com', 'https://truecraft-frontend.onrender.com']
 }));
 
 

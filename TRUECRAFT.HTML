@@ -144,9 +144,6 @@
   <section id="home" class="active" style="background-image: url('https://images.unsplash.com/photo-1588854337236-f9680f27c667?auto=format&fit=crop&w=1920&q=80');">
     <h1>Welcome to TrueCraft Nashville</h1>
     <p>Transform your space with Nashville's most trusted remodeling experts.</p>
-    <div style="margin-top: 40px; display: flex; justify-content: center;">
-      <iframe title="Modern Kitchen Counter" frameborder="0" width="640" height="480" src="https://sketchfab.com/models/d245b006ce1d4e2191daf2df0d6c0e30/embed" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    </div>
   </section>
 
   <section id="about" style="background-image: url('https://images.unsplash.com/photo-1600585153899-1ff7c53c3f3e?auto=format&fit=crop&w=1920&q=80');">
@@ -169,7 +166,7 @@
     <form id="uploadForm">
       <input type="text" id="name" placeholder="Your Name" required>
       <input type="email" id="email" placeholder="Your Email" required>
-      <input type="file" id="file" accept=".jpg,.png,.pdf,.zip" required>
+      <input type="file" id="file" accept=".jpg,.png,.pdf,.zip" multiple required>
       <button type="submit">Send Design</button>
     </form>
     <p id="uploadStatus" style="margin-top: 10px; color: lightgreen;"></p>
@@ -224,7 +221,7 @@
       }
 
       try {
-        const response = await fetch('https://www.test123hatham.com/upload', {
+        const response = await fetch('https://truecraft-server.onrender.com/upload', {
           method: 'POST',
           body: formData
         });
