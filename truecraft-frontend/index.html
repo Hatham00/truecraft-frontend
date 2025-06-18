@@ -9,22 +9,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
       font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
       background-color: #000;
       color: white;
       height: 100%;
     }
     nav {
-      position: fixed;
       width: 100%;
-      top: 0;
-      left: 0;
       background-color: rgba(0, 0, 0, 0.85);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 40px;
-      z-index: 1000;
       flex-wrap: wrap;
     }
     nav img { height: 50px; }
@@ -37,32 +32,30 @@
       text-transform: uppercase;
       cursor: pointer;
     }
-    section {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      padding: 100px 20px 60px;
+    .page {
+      display: none;
+      padding: 100px 20px;
       text-align: center;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+    .page.active {
+      display: block;
     }
     h1, h2 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #fff;
       text-shadow: 0 2px 4px rgba(0,0,0,0.7);
     }
     p {
       font-size: 18px;
-      color: #f0f0f0;
       line-height: 1.6;
       text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
     h3 {
       margin-top: 40px;
       font-size: 24px;
-      color: #fff;
       text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
     form {
@@ -119,75 +112,37 @@
       max-width: 320px;
       width: 100%;
     }
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        padding: 10px 20px;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        margin-top: 10px;
-      }
-      h1, h2 {
-        font-size: 28px;
-      }
-      p {
-        font-size: 16px;
-      }
-      form {
-        width: 90%;
-        padding: 15px;
-      }
-      input, textarea {
-        width: 100%;
-      }
-      iframe {
-        width: 100% !important;
-        height: auto !important;
-      }
-      section {
-        padding: 80px 10px 40px;
-      }
-    }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#home"><img src="https://img1.wsimg.com/isteam/ip/62980aca-7f4b-4d49-b60c-599f348429dd/PNG.png" alt="TrueCraft Nashville Logo" /></a>
+    <a href="#" onclick="navigate('home')"><img src="https://img1.wsimg.com/isteam/ip/62980aca-7f4b-4d49-b60c-599f348429dd/PNG.png" alt="TrueCraft Nashville Logo" /></a>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#design">Design</a></li>
-      <li><a href="#instagram">Instagram</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" onclick="navigate('home')">Home</a></li>
+      <li><a href="#" onclick="navigate('about')">About</a></li>
+      <li><a href="#" onclick="navigate('services')">Services</a></li>
+      <li><a href="#" onclick="navigate('design')">Design</a></li>
+      <li><a href="#" onclick="navigate('instagram')">Instagram</a></li>
+      <li><a href="#" onclick="navigate('contact')">Contact</a></li>
     </ul>
   </nav>
 
-  <section id="home" style="background-image: url('image1_home_about.jpg');">
+  <div id="home" class="page active" style="background-image: url('image1_home_about.jpg');">
     <h1>Welcome to TrueCraft Nashville</h1>
     <p>Transform your space with Nashville's most trusted remodeling experts.</p>
-    <div style="margin-top: 40px; display: flex; justify-content: center;">
-      <iframe title="Modern Kitchen Counter" frameborder="0" width="640" height="480"
-        src="https://sketchfab.com/models/d245b006ce1d4e2191daf2df0d6c0e30/embed"
-        allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true">
-      </iframe>
-    </div>
-  </section>
+  </div>
 
-  <section id="about" style="background-image: url('image1_home_about.jpg');">
+  <div id="about" class="page" style="background-image: url('image1_home_about.jpg');">
     <h2>About Us</h2>
     <p>We create luxurious, modern, and functional living spaces in the heart of Nashville. Precision. Passion. Perfection.</p>
-  </section>
+  </div>
 
-  <section id="services" style="background-image: url('image2_services_design.jpg');">
+  <div id="services" class="page" style="background-image: url('image2_services_design.jpg');">
     <h2>Our Services</h2>
     <p>Kitchen, bathroom, and whole-home remodeling tailored to your vision — done the TrueCraft way.</p>
-  </section>
+  </div>
 
-  <section id="design" style="background-image: url('image2_services_design.jpg');">
+  <div id="design" class="page" style="background-image: url('image2_services_design.jpg');">
     <h2>Design in 3D</h2>
     <p>Launch our interactive 3D room planner to create your perfect kitchen, bathroom, living room, or bedroom.</p>
     <div class="button-spaced">
@@ -201,18 +156,18 @@
       <button type="submit">Send Design</button>
     </form>
     <p id="uploadStatus" style="margin-top: 10px; color: lightgreen;"></p>
-  </section>
+  </div>
 
-  <section id="instagram" style="background-image: url('image3_instagram.jpg');">
+  <div id="instagram" class="page" style="background-image: url('image3_instagram.jpg');">
     <h2>Our Work on Instagram</h2>
     <div class="instagram-embed-wrapper">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CqQtFwPpXEj/" data-instgrm-version="14"></blockquote>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cpra1dTs2MM/" data-instgrm-version="14"></blockquote>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CprXwLbMbmF/" data-instgrm-version="14"></blockquote>
     </div>
-  </section>
+  </div>
 
-  <section id="contact" style="background-image: url('image3_instagram.jpg');">
+  <div id="contact" class="page" style="background-image: url('image3_instagram.jpg');">
     <h2>Contact Us</h2>
     <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -221,7 +176,7 @@
       <button type="submit">Send Message</button>
     </form>
     <p style="margin-top: 20px;">TrueCraft Nashville<br>123 Artisan Way, Nashville, TN<br>Mon–Fri 9AM–5PM</p>
-  </section>
+  </div>
 
   <footer>
     &copy; 2025 TrueCraft Nashville. All rights reserved.
@@ -229,6 +184,13 @@
 
   <script async src="//www.instagram.com/embed.js"></script>
   <script>
+    function navigate(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+
     document.getElementById('uploadForm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
