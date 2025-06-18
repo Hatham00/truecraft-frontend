@@ -3,12 +3,5 @@
     "/**": {
       "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
     }
-  },
-  "redirects": [
-    {
-      "source": "http://test123hatham.com",
-      "destination": "https://test123hatham.com",
-      "status": 301
-    }
-  ]
+  }
 }
