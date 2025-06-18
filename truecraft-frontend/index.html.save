@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TrueCraft Nashville</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -38,14 +37,20 @@
       cursor: pointer;
     }
     section {
-      position: relative;
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
       width: 100%;
-      min-height: 100vh;
-      padding: 100px 20px 60px;
+      min-height: calc(100vh - 80px);
+      padding: 60px 20px;
       text-align: center;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
+    section.active {
+      display: block;
     }
     h1, h2 {
       font-size: 36px;
@@ -81,8 +86,7 @@
       width: 80%;
       max-width: 500px;
       padding: 10px;
-      border: none;
-      border-radius: 5px;
+      border: 
       font-size: 14px;
     }
     .button, button[type="submit"] {
@@ -148,46 +152,49 @@
         height: auto !important;
       }
       section {
-        padding: 80px 10px 40px;
+        padding: 40px 10px;
       }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#home"><img src="https://img1.wsimg.com/isteam/ip/62980aca-7f4b-4d49-b60c-599f348429dd/PNG.png" alt="TrueCraft Nashville Logo" /></a>
+    <a href="#" onclick="showSection('home')">
+      <img src="https://img1.wsimg.com/isteam/ip/62980aca-7f4b-4d49-b60c-599f348429dd/PNG.png" alt="TrueCraft Nashville Logo" />
+    </a>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#design">Design</a></li>
-      <li><a href="#instagram">Instagram</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a onclick="showSection('home')">Home</a></li>
+      <li><a onclick="showSection('about')">About</a></li>
+      <li><a onclick="showSection('services')">Services</a></li>
+      <li><a onclick="showSection('design')">Design</a></li>
+      <li><a onclick="showSection('instagram')">Instagram</a></li>
+      <li><a onclick="showSection('contact')">Contact</a></li>
     </ul>
   </nav>
 
-  <section id="home" style="background-image: url('image1_home_about.jpg');">
+  <section id="home" class="active" style="background-image: url('https://www.budgetdumpster.com/images/blog/remodeled-budget-kitchen-600x300.jpg');">
     <h1>Welcome to TrueCraft Nashville</h1>
     <p>Transform your space with Nashville's most trusted remodeling experts.</p>
     <div style="margin-top: 40px; display: flex; justify-content: center;">
       <iframe title="Modern Kitchen Counter" frameborder="0" width="640" height="480"
         src="https://sketchfab.com/models/d245b006ce1d4e2191daf2df0d6c0e30/embed"
-        allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true">
+        allow="autoplay; fullscreen; vr"
+        mozallowfullscreen="true" webkitallowfullscreen="true">
       </iframe>
     </div>
   </section>
 
-  <section id="about" style="background-image: url('image1_home_about.jpg');">
+  <section id="about" style="background-image: url('https://images.unsplash.com/photo-1600585153899-1ff7c53c3f3e?auto=format&fit=crop&w=1920&q=80');">
     <h2>About Us</h2>
     <p>We create luxurious, modern, and functional living spaces in the heart of Nashville. Precision. Passion. Perfection.</p>
   </section>
 
-  <section id="services" style="background-image: url('image2_services_design.jpg');">
+  <section id="services" style="background-image: url('https://images.unsplash.com/photo-1600585153933-47dfcb0b3f91?auto=format&fit=crop&w=1920&q=80');">
     <h2>Our Services</h2>
     <p>Kitchen, bathroom, and whole-home remodeling tailored to your vision — done the TrueCraft way.</p>
   </section>
 
-  <section id="design" style="background-image: url('image2_services_design.jpg');">
+  <section id="design" style="background-image: url('https://images.unsplash.com/photo-1615873968403-89c192f2f706?auto=format&fit=crop&w=1920&q=80');">
     <h2>Design in 3D</h2>
     <p>Launch our interactive 3D room planner to create your perfect kitchen, bathroom, living room, or bedroom.</p>
     <div class="button-spaced">
@@ -203,7 +210,7 @@
     <p id="uploadStatus" style="margin-top: 10px; color: lightgreen;"></p>
   </section>
 
-  <section id="instagram" style="background-image: url('image3_instagram.jpg');">
+  <section id="instagram" style="background-image: url('https://images.unsplash.com/photo-1620225035513-5a8459c3b42d?auto=format&fit=crop&w=1920&q=80');">
     <h2>Our Work on Instagram</h2>
     <div class="instagram-embed-wrapper">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CqQtFwPpXEj/" data-instgrm-version="14"></blockquote>
@@ -212,7 +219,7 @@
     </div>
   </section>
 
-  <section id="contact" style="background-image: url('image3_instagram.jpg');">
+  <section id="contact" style="background-image: url('https://images.unsplash.com/photo-1615874959474-d609969a410b?auto=format&fit=crop&w=1920&q=80');">
     <h2>Contact Us</h2>
     <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -229,6 +236,11 @@
 
   <script async src="//www.instagram.com/embed.js"></script>
   <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
     document.getElementById('uploadForm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
