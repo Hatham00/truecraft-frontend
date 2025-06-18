@@ -9,11 +9,6 @@
       "source": "http://test123hatham.com",
       "destination": "https://test123hatham.com",
       "status": 301
-    },
-    {
-      "source": "/",
-      "destination": "/index.html",
-      "status": 200
     }
   ]
 }
